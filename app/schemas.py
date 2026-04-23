@@ -16,7 +16,7 @@ class InputData(BaseModel):
 
 class PredictionResponse(BaseModel):
     """Respuesta de la API."""
-    prediction:    list[float]
-    lag_usado:     int
-    horizonte:     int
-    descripcion:   str
+    prediction: list[float]
+    lag_usado: int
+    horizonte: int
+    descripcion: str
