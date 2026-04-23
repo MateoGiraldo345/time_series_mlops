@@ -112,3 +112,10 @@ Para cada tamaño de lag y fold: RMSE, MAE, MAPE, MSE por horizonte h=1…7 y BD
 
 - **BDS p > 0.05** → residuos independientes ✓
 - **BDS p ≤ 0.05** → estructura residual sin capturar ✗
+
+## Ejemplo de ejecución de la **API**:
+
+
+<p align="center">
+  <img src="assets/btc_api.gif" width="600" alt="Vista previa de la API">
+</p>
