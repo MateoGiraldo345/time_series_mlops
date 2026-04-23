@@ -70,9 +70,11 @@ def predict(data: InputData):
     prediction = scaler_Y.inverse_transform(y_scaled)[0].tolist()
 
     return PredictionResponse(
-        prediction=  [round(v, 8) for v in prediction],
-        lag_usado=   LAG,
-        horizonte=   HORIZONTE,
-        descripcion=(f"Volatilidad predicha para los próximos {HORIZONTE} minutos "
-             f"usando los últimos {LAG} valores de volatilidad histórica.")
+        prediction=[round(v, 8) for v in prediction],
+        lag_usado=LAG,
+        horizonte=HORIZONTE,
+        descripcion=(
+            f"Volatilidad predicha para los próximos {HORIZONTE} minutos "
+            f"usando los últimos {LAG} valores de volatilidad histórica."
+        )
     )
