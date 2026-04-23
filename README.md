@@ -13,11 +13,11 @@ time-series-mlops/
 │   ├── 1_eda.ipynb                    # Exploración y análisis
 │   ├── 2_model_training.ipynb         # Entrenamiento MLP + CV + métricas
 │   └── 3_residual_analysis.ipynb      # Diagnóstico de residuos (BDS)
-├── results/                           # Tablas CSV con métricas
 ├── app/
 │   ├── api.py                         # API FastAPI
 │   ├── schemas.py                     # Modelos Pydantic
-│   └── model.joblib                   # Modelo entrenado
+│   ├── preprocesamiento.joblib        # Preprocesamiento del input
+│   └── mejor_modelo.keras             # Modelo entrenado
 ├── tests/
 │   ├── test_model.py                  # Tests del modelo
 │   └── test_api.py                    # Tests de la API
@@ -70,10 +70,18 @@ curl -X POST http://localhost:8000/predict \
 
 ```json
 {
-  "prediction": [0.00046, 0.00047, 0.00045, 0.00048, 0.00046, 0.00047, 0.00045],
+  "prediction": [
+    0.00063506,
+    0.0006351,
+    0.00064427,
+    0.0006424,
+    0.00064905,
+    0.00063267,
+    0.00063411
+  ],
   "lag_usado": 60,
   "horizonte": 7,
-  "descripcion": "Volatilidad predicha para los próximos 7 minutos..."
+  "descripcion": "Volatilidad predicha para los próximos 7 minutos usando los últimos 60 valores de volatilidad histórica."
 }
 ```
 
