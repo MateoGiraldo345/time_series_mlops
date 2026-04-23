@@ -1,9 +1,11 @@
 """Modelos Pydantic para la API."""
+
 from pydantic import BaseModel, field_validator
 
 
 class InputData(BaseModel):
     """Cuerpo de la petición: lista de valores de volatilidad histórica."""
+
     lags: list[float]
 
     @field_validator("lags")
@@ -16,6 +18,7 @@ class InputData(BaseModel):
 
 class PredictionResponse(BaseModel):
     """Respuesta de la API."""
+
     prediction: list[float]
     lag_usado: int
     horizonte: int
