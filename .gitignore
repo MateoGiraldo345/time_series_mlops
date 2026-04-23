@@ -1,0 +1,9 @@
+data/
+results/
+ml_venv/
+venv/
+__pycache__/
+*.csv
+*.xls
+*.joblib
+*.keras
