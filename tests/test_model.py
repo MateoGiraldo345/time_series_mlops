@@ -7,8 +7,7 @@ import tensorflow as tf
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MODEL_PATH    = os.path.join(BASE_DIR, "app", "mejor_modelo.keras")
-SCALER_X_PATH = os.path.join(BASE_DIR, "app", "mejor_modelo_scaler_x.joblib")
-SCALER_Y_PATH = os.path.join(BASE_DIR, "app", "mejor_modelo_scaler_y.joblib")
+PREPROC_PATH = os.path.join(BASE_DIR, "app", "preprocesamiento.joblib")
 
 LAG = 60
 HORIZONTE = 7
